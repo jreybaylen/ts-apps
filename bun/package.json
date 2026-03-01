@@ -1,0 +1,18 @@
+{
+  "name": "bun",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run index.ts",
+    "build": "bun build index.ts --outdir dist --minify --license --clean-dist",
+    "start": "bun run dist/index.mjs"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
