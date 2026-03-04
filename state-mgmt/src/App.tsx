@@ -1,3 +1,5 @@
+import { useShallow } from 'zustand/shallow'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -5,7 +7,7 @@ import './App.css'
 import { useCounter } from './store/useCounter'
 
 function App() {
-  const { count, setCount } = useCounter((state) => state)
+  const { count, setCount } = useCounter(useShallow((state) => state))
 
   return (
     <>
