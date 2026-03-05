@@ -1,0 +1,48 @@
+name: Sync Workflow (Main)
+run-name: main - "${{ github.event.head_commit.message || github.event.pull_request.title || 'manual trigger' }}" by @${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+  
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Allowed branch'
+        required: true
+        default: main
+
+  pull_request:
+    branches:
+      - main
+    types:
+      - synchronize
+    paths:
+      - 'main/**'
+
+jobs:
+  build:
+    if: |
+      github.ref == 'refs/heads/main' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main')
+    name: full-build-main
+    runs-on: ubuntu-latest
+    environment: preview
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install bun runtime
+        uses: oven-sh/setup-bun@v2
+
+      - name: Bun install packages
+        run: bun install
+
+      - name: Running test:ci
+        run: bun run test:ci
+
+      - name: Build application
+        run: bun run build
