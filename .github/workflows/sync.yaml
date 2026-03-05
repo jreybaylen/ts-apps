@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'src/**'
+      - 'hydra-app/**'
   
   workflow_dispatch:
     inputs:
@@ -21,7 +21,7 @@ on:
     types:
       - synchronize
     paths:
-      - 'main/**'
+      - 'hydra-app/**'
 
 jobs:
   build:
@@ -39,10 +39,13 @@ jobs:
         uses: oven-sh/setup-bun@v2
 
       - name: Bun install packages
+        working-directory: ./hydra-app
         run: bun install
 
       - name: Running test:ci
+        working-directory: ./hydra-app
         run: bun run test:ci
 
       - name: Build application
+        working-directory: ./hydra-app
         run: bun run build
