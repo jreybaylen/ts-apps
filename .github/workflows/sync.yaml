@@ -30,7 +30,7 @@ jobs:
       (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main')
     name: full-build-main
     runs-on: ubuntu-latest
-    environment: preview
+    environment: production
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
