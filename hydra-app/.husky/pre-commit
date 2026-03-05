@@ -1,6 +1,7 @@
 cd hydra-app
 
 bun run test:ci
-bun run build
+bun run eslint:fix
 bun run oxlint:fix
 bun run oxfmt
+bun run build
