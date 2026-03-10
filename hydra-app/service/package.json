@@ -1,0 +1,22 @@
+{
+  "name": "@hydra/server",
+  "version": "1.0.50",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts --minify-whitespace --minify-syntax --target=bun --outdir=dist",
+    "clean": "del-cli \"dist\" \"node_modules\"",
+    "start": "bun dist/index.js",
+    "fmt": "oxfmt .",
+    "lint": "oxlint --fix ."
+  },
+  "dependencies": {
+    "elysia": "^1.4.27"
+  },
+  "devDependencies": {
+    "bun-types": "^1.3.10",
+    "del-cli": "^7.0.0",
+    "oxfmt": "^0.37.0",
+    "oxlint": "^1.52.0"
+  },
+  "module": "src/index.js"
+}
