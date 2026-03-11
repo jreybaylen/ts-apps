@@ -10,9 +10,9 @@ export default defineConfig({
     tsconfigPaths(),
     react({
       babel: {
-        plugins: [['babel-plugin-react-compiler']],
-      },
+        plugins: [['babel-plugin-react-compiler']]
+      }
     }),
     tailwindcss()
-  ],
+  ]
 })
