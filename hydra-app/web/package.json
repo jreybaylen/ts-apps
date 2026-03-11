@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "cd .. && husky .husky",
+    "prepare": "cd ../.. && husky hydra-app/.husky",
     "clean": "del-cli \"dist\" \"node_modules\"",
     "dev": "vite",
     "preview": "vite preview",
