@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "cd .. && husky hydra-app/.husky",
+    "prepare": "cd .. && husky .husky",
     "clean": "del-cli \"dist\" \"node_modules\"",
     "dev": "vite",
     "preview": "vite preview",
@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
