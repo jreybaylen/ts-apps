@@ -1,5 +1,19 @@
 import { Elysia } from 'elysia'
 
-const app = new Elysia().get('/', () => 'Hello Elysia').listen(3000)
+import { AuthModule } from './modules'
 
-console.log(`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port} `)
+try {
+  const app = new Elysia({
+    prefix: '/api/v1',
+    strictPath: true
+  })
+
+  app.use(AuthModule)
+  app.listen(3000)
+
+  const { hostname, port } = app.server || {}
+
+  console.log(`🦊 Elysia is running at ${hostname}:${port}`)
+} catch (error) {
+  console.error('ERROR: ', error)
+}
