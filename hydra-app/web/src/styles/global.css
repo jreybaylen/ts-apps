@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-open-sans: "Open Sans", sans-serif;
+  --font-open-sans--font-variation-settings: "wdth" 100;
+}
+
+* {
+  @apply font-open-sans;
+}
