@@ -1,0 +1,7 @@
+cd hydra-app/web
+
+bun run build
+
+cd ../service
+
+bun run build
