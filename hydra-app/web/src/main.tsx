@@ -3,11 +3,11 @@ import { createRoot } from 'react-dom/client'
 
 import { App } from '@pages/App'
 
-const htmlRootElement = document.getElementById('root') as HTMLElement
+const htmlRootElement = document.getElementById('hydra-app') as HTMLElement
 const rootElement = createRoot(htmlRootElement)
 
 rootElement.render(
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 )

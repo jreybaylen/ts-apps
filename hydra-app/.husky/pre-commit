@@ -1,0 +1,5 @@
+cd hydra-app/web
+
+bun run test:ci
+bun run lint-staged
+bun run build
