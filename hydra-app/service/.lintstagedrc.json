@@ -1,0 +1,6 @@
+{
+  "src/**/*.{ts,tsx,json}": [
+      "bun run oxlint:fix",
+      "bun run oxfmt"
+    ]
+}

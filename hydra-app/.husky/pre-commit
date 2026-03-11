@@ -3,3 +3,7 @@ cd hydra-app/web
 bun run test:ci
 bun run lint-staged
 bun run build
+
+cd ../service
+bun run lint-staged
+bun run build
